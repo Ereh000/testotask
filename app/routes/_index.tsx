@@ -55,15 +55,15 @@ export default function ShoppingCart() {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl text-black font-bold text-center mb-8">Shopping Cart</h1>
         
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Products</h2>
+          <h2 className="text-xl text-black font-semibold mb-4">Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {products.map(product => (
               <div key={product.id} className="bg-white rounded-lg shadow p-4">
-                <h3 className="font-medium">{product.name}</h3>
-                <p className="text-gray-700 mb-3">₹{product.price}</p>
+                <h3 className="font-medium text-black">{product.name}</h3>
+                <p className="text-gray-700 text-black mb-3">₹{product.price}</p>
                 <button 
                   onClick={() => addToCart(product)}
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 rounded transition"
@@ -76,10 +76,10 @@ export default function ShoppingCart() {
         </div>
         
         <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-semibold mb-4">Cart Summary</h2>
+          <h2 className="text-xl text-black font-semibold mb-4">Cart Summary</h2>
           <div className="flex justify-between items-center border-b pb-4 mb-4">
-            <span>Subtotal:</span>
-            <span className="font-semibold">₹{subtotal}</span>
+            <span className=' text-black'>Subtotal:</span>
+            <span className="font-semibold text-black">₹{subtotal}</span>
           </div>
           
           {!freeGiftApplied && subtotal > 0 && (
@@ -105,11 +105,11 @@ export default function ShoppingCart() {
         
         {cart.length > 0 ? (
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-semibold mb-4">Cart Items</h2>
+            <h2 className="text-xl text-black font-semibold mb-4">Cart Items</h2>
             {cart.map(item => (
               <div key={item.id} className="flex justify-between items-center border-b py-4 last:border-0">
                 <div>
-                  <h3 className="font-medium">{item.name}</h3>
+                  <h3 className="font-medium text-black">{item.name}</h3>
                   <p className="text-gray-600">₹{item.price} × {item.quantity} =₹{item.price * item.quantity}</p>
                 </div>
                 
